@@ -1,0 +1,91 @@
+{
+  "name": "npm-dev-template",
+  "version": "0.0.1",
+  "author": "ashu-guo",
+  "description": "a template for npm library developer",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/aShu-guo/npm-dev-template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aShu-guo/npm-dev-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aShu-guo/npm-dev-template/issues"
+  },
+  "keywords": [
+    "vue",
+    "lib"
+  ],
+  "style": "./dist/main.css",
+  "main": "./dist/my-lib.umd.cjs",
+  "module": "./dist/my-lib.es.js",
+  "unpkg": "./dist/my-lib.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "dev": "npm -C examples run dev",
+    "build": "vite build",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,config}/**/*.{vue,js,jsx}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,jsx,css,less,scss,vue,html}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged",
+    "release": "standard-version",
+    "publish:next": "npm run build && npm publish --tag next"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-order": "^5.0.0",
+    "vite": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
+}
