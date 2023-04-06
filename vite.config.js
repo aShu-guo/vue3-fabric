@@ -2,8 +2,6 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
 
-console.log(resolve('src/index.js'));
-// https://vitejs.dev/coindexnfig/
 export default defineConfig(() => {
   return {
     // plugins
@@ -12,16 +10,16 @@ export default defineConfig(() => {
     build: {
       minify: true,
       lib: {
-        entry: resolve('src/entry.js'),
-        name: 'MyLib',
-        fileName: 'my-lib',
+        entry: resolve('src/main.js'),
+        name: 'Vue3Fabric',
+        fileName: 'vue3-fabric',
       },
       rollupOptions: {
-        external: ['vue'],
+        external: ['vue', 'fabric'],
         output: {
           globals: {
             vue: 'Vue',
-            //
+            fabric: 'Fabric',
           },
         },
       },

@@ -1,6 +1,6 @@
 <template>
-  <MyLib />
+  <Vue3Fabric />
 </template>
 <script setup>
-import MyLib from '../../src/components/index.vue';
+import Vue3Fabric from '../../src/Vue3Fabric/index.vue';
 </script>

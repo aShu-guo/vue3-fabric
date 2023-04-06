@@ -1,31 +1,36 @@
 {
-  "name": "npm-dev-template",
-  "version": "0.0.1",
+  "name": "vue3-fabric",
+  "version": "0.0.1-beta",
   "author": "ashu-guo",
-  "description": "a template for npm library developer",
+  "description": "a photo editor for vue3, supports rotation, scale, zoom and so on, based on Fabric.js",
   "type": "module",
   "license": "MIT",
-  "homepage": "https://github.com/aShu-guo/npm-dev-template",
+  "homepage": "https://github.com/aShu-guo/vue3-fabric#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aShu-guo/npm-dev-template.git"
+    "url": "git+https://github.com/aShu-guo/vue3-fabric.git"
   },
   "bugs": {
-    "url": "https://github.com/aShu-guo/npm-dev-template/issues"
+    "url": "https://github.com/aShu-guo/vue3-fabric/issues"
   },
   "keywords": [
     "vue",
-    "lib"
+    "lib",
+    "fabric",
+    "image",
+    "img",
+    "editor",
+    "previewer"
   ],
   "style": "./dist/main.css",
-  "main": "./dist/my-lib.umd.cjs",
-  "module": "./dist/my-lib.es.js",
-  "unpkg": "./dist/my-lib.umd.js",
+  "main": "./dist/vue3-fabric.umd.cjs",
+  "module": "./dist/vue3-fabricb.js",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.es.js",
-      "require": "./dist/my-lib.umd.js"
-    }
+      "import": "./dist/vue3-fabric.js",
+      "require": "./dist/vue3-fabric.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "files": [
     "dist",
@@ -36,14 +41,16 @@
     "dev": "npm -C examples run dev",
     "build": "vite build",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,config}/**/*.{vue,js,jsx}\" --fix",
-    "lint:prettier": "prettier --write  \"src/**/*.{js,json,jsx,css,less,scss,vue,html}\"",
+    "lint:prettier": "prettier --write  \\\\\\\"src/**/*.{js,json,jsx,css,less,scss,vue,html}\\\\\\\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
-    "release": "standard-version",
     "publish:next": "npm run build && npm publish --tag next"
   },
   "peerDependencies": {
     "vue": "^3.2.45"
+  },
+  "dependencies": {
+    "fabric": "^5.3.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
