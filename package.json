@@ -41,7 +41,7 @@
     "dev": "npm -C examples run dev",
     "build": "vite build",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,config}/**/*.{vue,js,jsx}\" --fix",
-    "lint:prettier": "prettier --write  \\\\\\\"src/**/*.{js,json,jsx,css,less,scss,vue,html}\\\\\\\"",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,jsx,css,less,scss,vue,html}\"",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "lint:lint-staged": "lint-staged",
     "publish:next": "npm run build && npm publish --tag next"
@@ -60,6 +60,7 @@
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "mitt": "^3.0.0",
     "prettier": "^2.8.3",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.3",

@@ -29,7 +29,7 @@ module.exports = {
       },
     ],
     'space-before-function-paren': 'off',
-
+    'vue/valid-template-root': 'off',
     'vue/attributes-order': 'off',
     'vue/one-component-per-file': 'off',
     'vue/html-closing-bracket-newline': 'off',
