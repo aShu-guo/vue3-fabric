@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "dev": "npm -C examples run dev",
+    "dev": "vite",
     "build": "vite build",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,config}/**/*.{vue,js,jsx}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,jsx,css,less,scss,vue,html}\"",

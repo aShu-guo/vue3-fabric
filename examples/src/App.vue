@@ -5,10 +5,8 @@
   </Vue3Fabric>
 </template>
 <script setup>
-import Vue3Fabric from '../../src/Vue3Fabric/index.vue';
-import FabricImage from '../../src/Vue3Fabric/components/fabric-image/index.vue';
-import EditorControls from '../../src/Vue3Fabric/components/editor-controls/index.vue';
-
+import { Vue3Fabric, FabricImage, EditorControls } from 'vue3-fabric';
+import 'vue3-fabric/dist/style.css';
 import { onMounted, ref } from 'vue';
 const source = ref('');
 onMounted(() => {
