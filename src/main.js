@@ -1,6 +1,6 @@
-import Vue3Fabric from './Vue3Fabric/index.vue';
+import Vue3Fabric from './index.vue';
 export * from './style.css';
-export * from './Vue3Fabric/components/index';
+export * from './components/index';
 export { Vue3Fabric };
 export default {
   install(app) {

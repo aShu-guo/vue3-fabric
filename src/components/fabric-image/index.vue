@@ -1,7 +1,7 @@
 <template></template>
 <script setup name="FabricImage">
 import { inject, watch } from 'vue';
-import useImageLoader from '../../loader/image.js';
+import useImageLoader from '../../common/loader/image.js';
 const emitter = inject('emitter');
 const props = defineProps({
   source: { type: String, required: true },

@@ -1,12 +1,12 @@
 <template>
-  <Vue3Fabric :width="1000" :height="700">
-    <FabricImage :source="source" />
-    <EditorControls />
-  </Vue3Fabric>
+  <Vue3Fabric :width="1000" :height="700" :source="source" />
 </template>
 <script setup>
-import { Vue3Fabric, FabricImage, EditorControls } from 'vue3-fabric';
-import 'vue3-fabric/dist/style.css';
+// 开发时使用
+import Vue3Fabric from '../../../vue3-fabric/src/index.vue';
+// npm link时使用
+// import { Vue3Fabric, FabricImage, EditorControls } from 'vue3-fabric';
+// import 'vue3-fabric/dist/style.css';
 import { onMounted, ref } from 'vue';
 const source = ref('');
 onMounted(() => {
